@@ -11,7 +11,7 @@ class LaraInviteModel extends Model
      *
      * @var string
      */
-    protected $table = 'user_invitations';
+    protected $table = config('larainvite.table');
     
     /**
      * Referral User
