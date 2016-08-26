@@ -1,13 +1,13 @@
 {
-    "name": "junaidnasir/larainvite",
+    "name": "raymondwilkinson/larainvite",
     "description": "Laravel Invitation package, existing users can invite others by email",
     "keywords": ["laravel", "invite", "invitations"],
-    "homepage": "https://github.com/junaidnasir/larainvite",
+    "homepage": "https://github.com/RaymondWilkinson/larainvite",
     "license": "MIT",
     "authors": [
         {
-            "name": "Junaid Nasir",
-            "email": "contact@junaidnasir.com"
+            "name": "Raymond Wilkinson",
+            "email": "eleray13@hotmail.com"
         }
     ],
     "require": {
