@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class LaraInviteModel extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = config('larainvite.table');
+    protected $table;
+
+    public function __construct(array $attributes = [])
+    {
+        $this->table = config('larainvite.table');
+
+        parent::__construct($attributes);
+    }
     
     /**
      * Referral User
