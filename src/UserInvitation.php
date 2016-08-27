@@ -15,11 +15,11 @@ class UserInvitation
         $this->interface = $interface;
     }
 
-    public function invite($email, $referral, $expires = null)
+    public function invite($email, $referral, $role, $expires = null)
     {
         $expires = (is_null($expires)) ? Carbon::now()->addHour(config('larainvite.expires')) : $expires;
         $this->validateEmail($email);
-        return $this->interface->invite($email, $referral, $expires);
+        return $this->interface->invite($email, $referral, $role, $expires);
     }
 
     public function get($code)
