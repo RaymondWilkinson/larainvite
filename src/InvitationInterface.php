@@ -11,7 +11,7 @@ interface InvitationInterface
      * @param  DateTime $expires    Expiration Date Time
      * @return string               Referral code
      */
-    public function invite($email, $referral, $expires);
+    public function invite($email, $referral, $role, $expires);
     
     /**
      * Set referral code and LaraInviteModel instance
