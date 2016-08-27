@@ -35,6 +35,12 @@ class LaraInvite implements InvitationInterface
     private $referral;
 
     /**
+     * integer ID of role
+     * @var [type]
+     */
+    private $role;
+
+    /**
      * DateTime of referral code expiration
      * @var DateTime
      */
@@ -49,9 +55,9 @@ class LaraInvite implements InvitationInterface
     /**
      * {@inheritdoc}
      */
-    public function invite($email, $referral, $expires)
+    public function invite($email, $referral, $role, $expires)
     {
-        $this->readyPayload($email, $referral, $expires)
+        $this->readyPayload($email, $referral, $role, $expires)
              ->createInvite()
              ->publishEvent('invited');
         return $this->code;
@@ -179,6 +185,7 @@ class LaraInvite implements InvitationInterface
         $this->getModelInstance();
         $this->instance->email      = $this->email;
         $this->instance->user_id    = $this->referral;
+        $this->instance->role_id    = $this->role;
         $this->instance->valid_till = $this->expires;
         $this->instance->code       = $code;
         $this->instance->save();
@@ -214,10 +221,11 @@ class LaraInvite implements InvitationInterface
      * @param  DateTime $expires  expiration of token
      * @return self
      */
-    private function readyPayload($email, $referral, $expires)
+    private function readyPayload($email, $referral, $role, $expires)
     {
         $this->email    = $email;
         $this->referral = $referral;
+        $this->role     = $role;
         $this->expires  = $expires;
         return $this;
     }
