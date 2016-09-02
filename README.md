@@ -15,7 +15,7 @@ It generates referral code and keep track of status.
 Begin by installing the package through Composer. Run the following command in your terminal:
 
 ```bash
-composer require junaidnasir/larainvite
+composer require raymondwilkinson/larainvite
 ```
 
 add the package service provider in the providers array in `config/app.php`:
