@@ -233,7 +233,7 @@ class LaraInvite implements InvitationInterface
         $this->email    = $email;
         $this->referral = $referral;
         $this->role     = $role;
-        $this->group    = $role;
+        $this->group    = $group;
         $this->expires  = $expires;
         return $this;
     }
